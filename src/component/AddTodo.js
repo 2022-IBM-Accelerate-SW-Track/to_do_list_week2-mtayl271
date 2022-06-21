@@ -4,6 +4,7 @@ import { Button, TextField } from "@mui/material";
 class AddTodo extends Component {
   // Create a local react state of the this component with a content property set to nothing.
   constructor() {
+    <date key= ""/>
     super();
     this.state = {
       content: "",
@@ -15,6 +16,7 @@ class AddTodo extends Component {
   handleChange = (event) => {
     this.setState({
       content: event.target.value,
+      date: Date().toLocaleString('en-US'),
     });
   };
   // The handleSubmit function collects the forms input and puts it into the react state.
@@ -27,6 +29,7 @@ class AddTodo extends Component {
       this.props.addTodo(this.state);
       this.setState({
         content: "",
+        date: ""
       });
     }
   };
